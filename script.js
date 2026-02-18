@@ -10,7 +10,6 @@ const keyDisplay = document.getElementById("key-display");
 
 let events = [];
 
-/* Add Event */
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -26,8 +25,6 @@ form.addEventListener("submit", function(e) {
     renderEvents();
     form.reset();
 });
-
-/* Render Events (DOM Manipulation) */
 function renderEvents() {
     container.innerHTML = "";
 
@@ -64,26 +61,20 @@ function renderEvents() {
         container.appendChild(card);
     });
 }
-
-/* Clear Events */
 clearBtn.addEventListener("click", () => {
     events = [];
     renderEvents();
 });
-
-/* Add Sample */
 sampleBtn.addEventListener("click", () => {
     events.push({
         id: Date.now(),
-        title: "Tech Conference 2026",
-        date: "2026-03-15",
+        title: "Meeting ",
+        date: "2026-03-21",
         category: "Conference",
-        description: "Annual technology conference."
+        description: "Meeting for staff members."
     });
     renderEvents();
 });
-
-/* DOM Manipulation Demo (Keyboard Event) */
 document.addEventListener("keydown", function(e) {
     keyDisplay.textContent = "You Pressed: " + e.key;
 });
